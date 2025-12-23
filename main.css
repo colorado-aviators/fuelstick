@@ -12,12 +12,12 @@ div.selection {
 }
 
 a.title {
-    font-weight:regular;
+    font-weight: regular;
     font-size: 5vh;
 }
 
 a.disclaimer {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 1vh;
     color: red;
 }
