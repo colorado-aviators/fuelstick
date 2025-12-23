@@ -62,7 +62,7 @@ function recalculate() {
 }
 
 window.onload = async function setup() {
-    await extractModels("models.json").then((response) => {
+    await extractModels("./assets/models.json").then((response) => {
         models = response;
     })
     var fromModelSelect = document.getElementById("fromModel");

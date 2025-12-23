@@ -10,3 +10,14 @@ select, input {
 div.selection {
     margin: 2vh 2vh 2vh 2vh;
 }
+
+a.title {
+    font-weight:regular;
+    font-size: 5vh;
+}
+
+a.disclaimer {
+    font-weight:bold;
+    font-size: 1vh;
+    color: red;
+}
