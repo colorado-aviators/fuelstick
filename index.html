@@ -1,0 +1,62 @@
+<head>
+    <script type="text/javascript" src="fuelstick.js"></script>
+    <link rel="stylesheet" type="text/css" href="./main.css">
+</head>
+<body>
+<div id="fuelstick" align="center">
+    <p id="fuelstickTitle">
+        <a style="font-weight:regular; font-size: 5vh">
+            Fuelstick conversion tool
+        </a>
+        <br>
+        <a class="disclaimer">
+            USE AT YOUR OWN RISK
+        </a>
+        <br>
+        <a class="disclaimer">
+            Based on interpolation between discrete readings
+        </a>
+        <br>
+        <a class="disclaimer">
+            No guarantee of accuracy (DO NOT USE FOR FLIGHT PLANNING)
+        </a>
+    </p>
+    <a href="https://github.com/colorado-aviators/fuelstick/tree/main/assets/models.json"
+       style="font-size: 1vh">
+        Here are the interpolation points we extracted from the graph below.
+    </a>
+    <img
+            src="./assets/fuelstick_conversion_original.jpg"
+            height="30%vh"
+            align="center"
+            style="margin: 1vh 1vh 1vh 1vh"
+    >
+    <br>
+    <div class="selection">
+        <label for="fromModel">Fuelstick model:</label>
+        <select id="fromModel" onchange="setBounds();recalculate()"></select>
+    </div>
+    <div class="selection">
+        <label for="toModel">Airplane model:</label>
+        <select id="toModel" onchange="recalculate()"></select>
+    </div>
+    <div class="selection">
+        <label for="reading">Fuelstick reading:</label>
+        <input
+                type="number"
+                id="reading"
+                name="reading"
+                value="0"
+                min="0"
+                max="100"
+                step=".5"
+                onchange="recalculate()"
+        >
+        <a> gal</a>
+    </div>
+    <div class="selection">
+        <a>Airplane reading:</a>
+        <a id="convertedReading"></a>
+    </div>
+</div>
+</body>
