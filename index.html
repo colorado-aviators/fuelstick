@@ -1,0 +1,49 @@
+<head>
+    <script type="text/javascript" src="fuelhawk.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div id="fuelhawk" align="center">
+    <p id="fuelhawkTitle">
+        <a style="font-weight:regular; font-size: 5vh">
+            Simple Fuelhawk conversion tool
+        </a>
+        <br>
+        <a style="font-weight:bold;font-size: 3vh; color: red;">
+            Based on interpolation between discrete readings (USE WITH CAUTION!)
+        </a>
+    </p>
+    <img
+            src="/assets/fuelhawk_conversion_original.jpg"
+            height="30%vh"
+            align="center"
+            style="margin: 1vh 1vh 1vh 1vh"
+    >
+    <div class="selection">
+        <label for="fromModel">Fuelhawk model:</label>
+        <select id="fromModel" onchange="setBounds();recalculate()"></select>
+    </div>
+    <div class="selection">
+        <label for="toModel">Airplane model:</label>
+        <select id="toModel" onchange="recalculate()"></select>
+    </div>
+    <div class="selection">
+        <label for="reading">Fuelhawk reading:</label>
+        <input
+                type="number"
+                id="reading"
+                name="reading"
+                value="0"
+                min="0"
+                max="100"
+                step=".5"
+                onchange="recalculate()"
+        >
+        <a> gal</a>
+    </div>
+    <div class="selection">
+        <a>Airplane reading:</a>
+        <a id="convertedReading"></a>
+    </div>
+</div>
+</body>
